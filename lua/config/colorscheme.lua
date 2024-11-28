@@ -67,6 +67,8 @@ local highlights = {
   Underlined     = { style = "underline" },
   Error          = { fg = palette.red },
   Todo           = { fg = palette.teal, style = "bold" },
+  StatusLine     = { fg = palette.text, bg = palette.crust },
+  StatusLineNC   = { fg = palette.text, bg = palette.crust },
 }
 
 -- apply highlights
