@@ -17,6 +17,12 @@ local servers = {
         _root_dir = root_pattern({ "go.work", "go.mod", ".git" }),
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
     },
+    rust_analyzer = {
+        name = "rust-analyzer",
+        cmd = { "rust-analyzer" },
+        _root_dir = root_pattern({ "Cargo.toml", ".git" }),
+        filetypes = { "rust" },
+    },
 }
 
 local group = vim.api.nvim_create_augroup("UserLspStart", { clear = true })
