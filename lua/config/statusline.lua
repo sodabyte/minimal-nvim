@@ -7,7 +7,7 @@ _G.lsp_clients = function()
     for _, client in ipairs(clients) do
         table.insert(client_names, client.name)
     end
-    return "LSP: " .. table.concat(client_names, ", ")
+    return " " .. table.concat(client_names, ", ")
 end
 
 _G.lsp_diagnostics = function()
@@ -22,7 +22,7 @@ _G.lsp_diagnostics = function()
     local info_count = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.INFO })
     local hint_count = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.HINT })
 
-    return string.format("E:%d W:%d I:%d H:%d", error_count, warn_count, info_count, hint_count)
+    return string.format("[ %d  %d  %d  %d]", error_count, warn_count, info_count, hint_count)
 end
 
 vim.opt.statusline = " %t %m %r %h%w %{v:lua.lsp_clients()} %{v:lua.lsp_diagnostics()} %= %l:%c %p%% "
