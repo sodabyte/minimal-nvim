@@ -1,5 +1,5 @@
 _G.lsp_clients = function()
-    local clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
+    local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
     if #clients == 0 then
         return " " -- no active lsp clients
     end
@@ -11,7 +11,7 @@ _G.lsp_clients = function()
 end
 
 _G.lsp_diagnostics = function()
-    local clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
+    local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
     if #clients == 0 then
         return " " -- no diagnostics to show if no lsp is attached
     end
